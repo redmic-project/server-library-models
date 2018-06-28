@@ -1,0 +1,1 @@
+[![pipeline status](https://git.redmic.net/redmic-server/models/badges/dev/pipeline.svg)](https://git.redmic.net/redmic-server/models/commits/dev) [![coverage report](https://git.redmic.net/redmic-server/models/badges/dev/coverage.svg)](https://git.redmic.net/redmic-server/models/commits/dev)
