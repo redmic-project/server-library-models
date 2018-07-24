@@ -86,6 +86,7 @@ public final class DataPrefixType {
 				add(18L);
 				add(19L);
 				add(20L);
+				add(46L);
 			}
 		}));
 		classesHash.put(ToponymDTO.class, new Type(TOPONYM));
