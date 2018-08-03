@@ -58,6 +58,7 @@ public final class DataPrefixType {
 				add(5L);
 				add(6L);
 				add(7L);
+				add(30L);
 				add(31L);
 			}
 		}));
