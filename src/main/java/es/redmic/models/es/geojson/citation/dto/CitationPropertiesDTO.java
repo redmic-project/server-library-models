@@ -43,6 +43,7 @@ public class CitationPropertiesDTO extends PropertiesDTO {
 	private Long specimencount;
 
 	@JsonIgnoreProperties(value = { "_meta" })
+	@NotNull
 	@JsonDeserialize(using = CustomRelationDeserializer.class)
 	@JsonSchemaUrl(value = "controller.mapping.CONFIDENCE")
 	@JsonSchemaDefault(value = "1")
