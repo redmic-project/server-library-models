@@ -64,6 +64,14 @@ public class CitationPropertiesDTOTest extends DTOBaseTest<CitationPropertiesDTO
 	}
 
 	@Test
+	public void validationDTO_ReturnNotNullError_IfConfidenceIsNull() {
+
+		dto.setConfidence(null);
+
+		checkDTOHasError(dto, NOT_NULL_MESSAGE_TEMPLATE);
+	}
+
+	@Test
 	public void validationDTO_ReturnNotNullError_IfTaxonIsNull() {
 
 		dto.setTaxon(null);
