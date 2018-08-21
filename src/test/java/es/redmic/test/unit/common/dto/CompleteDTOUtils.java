@@ -392,6 +392,9 @@ public class CompleteDTOUtils {
 		CitationPropertiesDTO dto = new CitationPropertiesDTO();
 		dto.setActivityId("r.1.2.3");
 
+		dto.setStartDate(DateTime.now());
+		dto.setEndDate(DateTime.now());
+
 		ConfidenceDTO confidence = new ConfidenceDTO();
 		confidence.setId(1L);
 		confidence.setName("Baja");
