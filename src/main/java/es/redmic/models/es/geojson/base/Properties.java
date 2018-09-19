@@ -10,7 +10,7 @@ import es.redmic.models.es.common.deserializer.CustomDateTimeDeserializer;
 import es.redmic.models.es.common.serializer.CustomDateTimeSerializer;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class Properties {
+public class Properties {
 
 	private String activity;
 
