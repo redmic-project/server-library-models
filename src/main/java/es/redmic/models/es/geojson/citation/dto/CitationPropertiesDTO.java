@@ -29,8 +29,10 @@ public class CitationPropertiesDTO extends PropertiesDTO {
 
 	private Double deviation;
 
+	@NotNull
 	private DateTime startDate;
 
+	@NotNull
 	private DateTime endDate;
 
 	@Size(min = 0, max = 150)

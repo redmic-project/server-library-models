@@ -54,8 +54,11 @@ public final class DataPrefixType {
 		classesHash.put(GeoFixedObjectCollectingSeriesDTO.class, new Type(OBJECT_COLLECTING, 32L));
 		classesHash.put(GeoFixedTimeSeriesDTO.class, new Type(FIXED_TIMESERIES, new ArrayList<Long>() {
 			{
+				add(4L);
+				add(5L);
 				add(6L);
 				add(7L);
+				add(30L);
 				add(31L);
 			}
 		}));
@@ -84,6 +87,7 @@ public final class DataPrefixType {
 				add(18L);
 				add(19L);
 				add(20L);
+				add(46L);
 			}
 		}));
 		classesHash.put(ToponymDTO.class, new Type(TOPONYM));

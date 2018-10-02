@@ -392,10 +392,13 @@ public class CompleteDTOUtils {
 		CitationPropertiesDTO dto = new CitationPropertiesDTO();
 		dto.setActivityId("r.1.2.3");
 
-		ConfidenceDTO speciesConfidence = new ConfidenceDTO();
-		speciesConfidence.setId(1L);
-		speciesConfidence.setName("Baja");
-		speciesConfidence.setName_en("Low");
+		dto.setStartDate(DateTime.now());
+		dto.setEndDate(DateTime.now());
+
+		ConfidenceDTO confidence = new ConfidenceDTO();
+		confidence.setId(1L);
+		confidence.setName("Baja");
+		confidence.setName_en("Low");
 
 		TaxonDTO taxon = new TaxonDTO();
 		taxon.setId(1L);
@@ -405,7 +408,8 @@ public class CompleteDTOUtils {
 		taxon.setParent(new TaxonDTO());
 
 		dto.setTaxon(taxon);
-		dto.setSpeciesConfidence(speciesConfidence);
+		dto.setSpeciesConfidence(confidence);
+		dto.setConfidence(confidence);
 		dto.setRadius(50.0);
 
 		return dto;
