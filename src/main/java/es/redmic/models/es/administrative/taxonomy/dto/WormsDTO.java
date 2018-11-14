@@ -11,7 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import es.redmic.models.es.common.constraintvalidate.url.ValidateUrl;
-import es.redmic.models.es.common.deserializer.CustomDateTimeWOMillisecondsDeserializer;
+import es.redmic.models.es.common.deserializer.CustomDateTimeDeserializer;
 import es.redmic.models.es.common.serializer.CustomDateTimeSerializer;
 
 public class WormsDTO extends WormsBaseDTO {
@@ -33,7 +33,7 @@ public class WormsDTO extends WormsBaseDTO {
 
 	@NotNull
 	@JsonSerialize(using = CustomDateTimeSerializer.class)
-	@JsonDeserialize(using = CustomDateTimeWOMillisecondsDeserializer.class)
+	@JsonDeserialize(using = CustomDateTimeDeserializer.class)
 	private DateTime modified;
 
 	public String getStatus() {

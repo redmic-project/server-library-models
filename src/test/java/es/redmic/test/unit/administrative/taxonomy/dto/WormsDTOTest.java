@@ -118,7 +118,7 @@ public class WormsDTOTest extends DTOBaseTest<WormsDTO> {
 		assertEquals(result.getAphia().intValue(), 136470);
 		assertEquals(result.getScientificname(), "Leptochelia dubia");
 		assertEquals(result.getAuthority(), "(Kr\u00f8yer, 1842)");
-		assertEquals(result.getModified().toString(), "2016-06-29T21:59:13.000Z");
+		assertEquals(result.getModified().toString(), "2016-06-29T21:59:13.730Z");
 		assertEquals(result.getRank(), "Species");
 		assertEquals(result.getStatus(), "unaccepted");
 		assertEquals(result.getUrl(), "http://www.marinespecies.org/aphia.php?p=taxdetails&id=136470");
