@@ -1,7 +1,7 @@
 package es.redmic.test.unit.administrative.taxonomy.dto;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertNotNull;
 
 import java.io.IOException;
 import java.util.List;
@@ -137,10 +137,10 @@ public class WormsDTOTest extends DTOBaseTest<WormsDTO> {
 
 		assertEquals(result.size(), 3);
 		assertEquals(result.get(0).getAphia().intValue(), 819866);
-		assertTrue(result.get(0).getModified().toString().equals("2014-10-22T15:12:35.730Z"));
+		assertNotNull(result.get(0).getModified());
 		assertEquals(result.get(1).getAphia().intValue(), 829015);
-		assertTrue(result.get(1).getModified().toString().equals("2015-01-09T14:40:28.000Z"));
+		assertNotNull(result.get(1).getModified());
 		assertEquals(result.get(2).getAphia().intValue(), 136470);
-		assertTrue(result.get(2).getModified().toString().equals("2016-06-28T23:00:00.000Z"));
+		assertNotNull(result.get(2).getModified());
 	}
 }
