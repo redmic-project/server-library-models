@@ -1,6 +1,6 @@
 package es.redmic.models.es.tools.distribution.model;
 
-import com.vividsolutions.jts.geom.Polygon;
+import org.locationtech.jts.geom.Polygon;
 
 import es.redmic.models.es.geojson.GeoJSONFeatureType;
 import es.redmic.models.es.tools.distribution.species.model.TaxonProperties;

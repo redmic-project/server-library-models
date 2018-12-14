@@ -1,6 +1,6 @@
 package es.redmic.models.es.geojson.isolines.dto;
 
-import com.vividsolutions.jts.geom.MultiLineString;
+import org.locationtech.jts.geom.MultiLineString;
 
 import es.redmic.models.es.common.DataPrefixType;
 import es.redmic.models.es.geojson.GeoJSONFeatureType;

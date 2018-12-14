@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
-   		<artifactId>spring-boot-starter-parent</artifactId>
-    	<version>2.0.0.RELEASE</version>
-		<relativePath/>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.0.RELEASE</version>
+		<relativePath />
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>es.redmic.lib</groupId>
 	<artifactId>models</artifactId>
 	<packaging>jar</packaging>
-	<version>0.6.0</version>
+	<version>0.7.0</version>
 	<name>Models</name>
 	<description>Input-output classes and models</description>
 
@@ -27,14 +28,12 @@
 		<!-- REDMIC -->
 		<redmic.exceptions.version>0.6.0</redmic.exceptions.version>
 		<redmic.jackson-jsonschema.version>0.6.0</redmic.jackson-jsonschema.version>
-
+		<redmic.jts4jackson.version>0.0.1</redmic.jts4jackson.version>
+		
 		<!-- OTHERS -->
 		<commons-beanutils.version>1.9.3</commons-beanutils.version>
-		<geotools.version>19.0</geotools.version>
-		<commons-io.version>2.6</commons-io.version>
-		<jackson-datatype-jts.version>2.4</jackson-datatype-jts.version>
+		<geotools.version>20.1</geotools.version>
 		
-		<hibernate-validator.version>6.0.8.Final</hibernate-validator.version>
 		<org.mockito-version>1.10.19</org.mockito-version>
 
 		<!-- Version plugins -->
@@ -53,11 +52,17 @@
 			<version>${redmic.exceptions.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>es.redmic.lib</groupId>
 			<artifactId>jackson-jsonschema</artifactId>
 			<version>${redmic.jackson-jsonschema.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>es.redmic.lib</groupId>
+			<artifactId>jts4jackson</artifactId>
+			<version>${redmic.jts4jackson.version}</version>
 		</dependency>
 
 		<!-- Spring -->
@@ -93,18 +98,11 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.geotools</groupId>
 			<artifactId>gt-epsg-hsql</artifactId>
 			<version>${geotools.version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>${commons-io.version}</version>
-			<scope>provided</scope>
 		</dependency>
 
 		<!-- Jackson -->
@@ -114,29 +112,17 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.bedatadriven</groupId>
-			<artifactId>jackson-datatype-jts</artifactId>
-			<version>${jackson-datatype-jts.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.fasterxml.jackson.core</groupId>
-      				<artifactId>jackson-databind</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>${hibernate-validator.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- Logs -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -148,18 +134,11 @@
 			<artifactId>log4j-core</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- test -->
 		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-all</artifactId>
-			<version>${org.mockito-version}</version>
-			<scope>test</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.skyscreamer</groupId>
-			<artifactId>jsonassert</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 

@@ -2,7 +2,7 @@ package es.redmic.models.es.geojson.toponym.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.kjetland.jackson.jsonSchema.annotations.JsonSchemaIgnore;
-import com.vividsolutions.jts.geom.Point;
+import org.locationtech.jts.geom.Point;
 
 import es.redmic.models.es.common.DataPrefixType;
 import es.redmic.models.es.geojson.GeoJSONFeatureType;

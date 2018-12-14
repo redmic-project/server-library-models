@@ -3,7 +3,7 @@ package es.redmic.models.es.geojson.base;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 
 import es.redmic.models.es.common.model.BaseAbstractStringES;
 import es.redmic.models.es.geojson.GeoJSONFeatureType;

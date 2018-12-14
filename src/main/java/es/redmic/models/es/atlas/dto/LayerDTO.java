@@ -9,16 +9,16 @@ import java.util.Map;
 import org.geotools.data.ows.CRSEnvelope;
 import org.geotools.data.ows.Layer;
 import org.geotools.data.ows.StyleImpl;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.GeometryFactory;
+import org.locationtech.jts.geom.LinearRing;
+import org.locationtech.jts.geom.Polygon;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryFactory;
-import com.vividsolutions.jts.geom.LinearRing;
-import com.vividsolutions.jts.geom.Polygon;
 
 import es.redmic.exception.custom.ResourceNotFoundException;
 import es.redmic.models.es.administrative.dto.AncestorActivityDTO;
@@ -227,6 +227,7 @@ public class LayerDTO extends LayerCompactDTO {
 		}
 	}
 
+	@Override
 	public String toString() {
 
 		String result = "Name: " + getId() + "\nTitle: " + getTitle() + "\nAbstract: " + getAbstractLayer() + "\nSRS: "

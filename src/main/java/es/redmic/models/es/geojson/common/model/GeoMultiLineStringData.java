@@ -1,6 +1,6 @@
 package es.redmic.models.es.geojson.common.model;
 
-import com.vividsolutions.jts.geom.MultiLineString;
+import org.locationtech.jts.geom.MultiLineString;
 
 import es.redmic.models.es.geojson.GeoJSONFeatureType;
 import es.redmic.models.es.geojson.properties.model.GeoDataProperties;

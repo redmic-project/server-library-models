@@ -11,24 +11,24 @@ import java.util.Map;
 
 import org.apache.commons.beanutils.BeanMap;
 import org.apache.commons.beanutils.PropertyUtilsBean;
+import org.locationtech.jts.geom.Polygon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.bedatadriven.jackson.datatype.jts.JtsModule;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.vividsolutions.jts.geom.Polygon;
 
 import es.redmic.exception.common.ExceptionType;
 import es.redmic.exception.common.InternalException;
 import es.redmic.exception.elasticsearch.ESUpdateException;
+import es.redmic.jts4jackson.module.JTSModule;
 import es.redmic.models.es.geojson.common.model.Properties;
 
 @SuppressWarnings("rawtypes")
 public class ReferencesES<TModel extends BaseES> {
 
-	protected ObjectMapper objectMapper = new ObjectMapper()
-			.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false).registerModule(new JtsModule());
+	protected ObjectMapper objectMapper = new ObjectMapper().registerModule(new JTSModule())
+			.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
 	private final Logger LOGGER = LoggerFactory.getLogger(ReferencesES.class);
 
@@ -85,8 +85,8 @@ public class ReferencesES<TModel extends BaseES> {
 	 * @param newModel
 	 *            nuevo modelo de la referencia con los cambios realizados.
 	 * @param path
-	 *            string que indica el path parcial del modelo que se va a
-	 *            comparar (inicialmente vacio)
+	 *            string que indica el path parcial del modelo que se va a comparar
+	 *            (inicialmente vacio)
 	 */
 
 	private void compare(Object oldModel, Object newModel, String path) {
@@ -143,8 +143,8 @@ public class ReferencesES<TModel extends BaseES> {
 	}
 
 	/**
-	 * @return Clase con la que debe ser mapeada el modelo para indexarlo.
-	 *         Depende de donde se vaya a indexar.
+	 * @return Clase con la que debe ser mapeada el modelo para indexarlo. Depende
+	 *         de donde se vaya a indexar.
 	 */
 
 	public Class<?> getClassForMapping() {
@@ -166,14 +166,14 @@ public class ReferencesES<TModel extends BaseES> {
 	}
 
 	/**
-	 * Función para obtener los campos de la clase con la que se va a mapear.
-	 * Los campos obtenidos se almacenan en "fieldsInReference"
+	 * Función para obtener los campos de la clase con la que se va a mapear. Los
+	 * campos obtenidos se almacenan en "fieldsInReference"
 	 * 
 	 * @param resultClass
 	 *            clase de donde se deben obtener los campos.
 	 * @param path
-	 *            string que indica el path parcial del modelo que se va a
-	 *            comparar (inicialmente vacio)
+	 *            string que indica el path parcial del modelo que se va a comparar
+	 *            (inicialmente vacio)
 	 */
 
 	private void calculateFieldsInReference(Class<?> resultClass, String path) {
