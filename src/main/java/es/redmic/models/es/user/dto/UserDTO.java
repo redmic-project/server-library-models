@@ -1,18 +1,17 @@
 package es.redmic.models.es.user.dto;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.Length;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.redmic.models.es.common.dto.DTOImplement;
 
 public class UserDTO extends DTOImplement {
-	
+
 	@NotNull
-	@Length(max = 255)
+	@Size(max = 255)
 	@Email
 	private String email;
 
@@ -22,7 +21,7 @@ public class UserDTO extends DTOImplement {
 	public UserDTO() {
 		super();
 	}
-	
+
 	public String getEmail() {
 		return email;
 	}
