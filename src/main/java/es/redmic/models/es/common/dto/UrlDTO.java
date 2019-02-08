@@ -1,13 +1,13 @@
 package es.redmic.models.es.common.dto;
 
-import org.hibernate.validator.constraints.URL;
+import es.redmic.models.es.common.constraintvalidate.url.ValidateUrl;
 
 public class UrlDTO {
 
 	public UrlDTO() {
 	}
 
-	@URL
+	@ValidateUrl
 	public String url;
 
 	public String getUrl() {

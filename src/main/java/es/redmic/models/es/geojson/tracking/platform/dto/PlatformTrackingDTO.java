@@ -1,6 +1,6 @@
 package es.redmic.models.es.geojson.tracking.platform.dto;
 
-import com.vividsolutions.jts.geom.Point;
+import org.locationtech.jts.geom.Point;
 
 import es.redmic.models.es.common.DataPrefixType;
 import es.redmic.models.es.geojson.tracking.common.BaseTrackingDTO;
