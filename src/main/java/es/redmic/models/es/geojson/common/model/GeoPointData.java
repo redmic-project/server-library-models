@@ -1,6 +1,6 @@
 package es.redmic.models.es.geojson.common.model;
 
-import com.vividsolutions.jts.geom.Point;
+import org.locationtech.jts.geom.Point;
 
 import es.redmic.models.es.geojson.GeoJSONFeatureType;
 import es.redmic.models.es.geojson.properties.model.GeoDataProperties;

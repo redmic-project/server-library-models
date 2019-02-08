@@ -1,7 +1,7 @@
 package es.redmic.models.es.geojson.area.dto;
 
 import com.kjetland.jackson.jsonSchema.annotations.JsonSchemaIgnore;
-import com.vividsolutions.jts.geom.MultiPolygon;
+import org.locationtech.jts.geom.MultiPolygon;
 
 import es.redmic.models.es.common.DataPrefixType;
 import es.redmic.models.es.geojson.GeoJSONFeatureType;

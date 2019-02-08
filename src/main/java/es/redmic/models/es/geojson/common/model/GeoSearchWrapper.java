@@ -3,7 +3,7 @@ package es.redmic.models.es.geojson.common.model;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 
 import es.redmic.models.es.common.model.SearchWrapper;
 

@@ -1,6 +1,6 @@
 package es.redmic.models.es.geojson.tracking.utils;
 
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 
 import es.redmic.models.es.geojson.common.dto.MetaFeatureDTO;
 import es.redmic.models.es.geojson.common.model.Feature;

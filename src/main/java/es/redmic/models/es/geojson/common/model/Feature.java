@@ -3,8 +3,9 @@ package es.redmic.models.es.geojson.common.model;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.locationtech.jts.geom.Geometry;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.vividsolutions.jts.geom.Geometry;
 
 import es.redmic.models.es.common.model.BaseAbstractES;
 import es.redmic.models.es.geojson.GeoJSONFeatureType;
@@ -14,7 +15,7 @@ public class Feature<TProperties extends Properties, TGeometry extends Geometry>
 	@NotNull
 	@Size(min = 1, max = 50)
 	private String uuid;
-	
+
 	@JsonIgnore
 	private String _parentId;
 
@@ -24,6 +25,10 @@ public class Feature<TProperties extends Properties, TGeometry extends Geometry>
 
 	private TGeometry geometry;
 
+	public Feature() {
+		super();
+	}
+
 	public String getUuid() {
 		return uuid;
 	}
@@ -31,7 +36,7 @@ public class Feature<TProperties extends Properties, TGeometry extends Geometry>
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
 	}
-	
+
 	@JsonIgnore
 	public String get_parentId() {
 		return _parentId;

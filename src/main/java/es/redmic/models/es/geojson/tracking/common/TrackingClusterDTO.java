@@ -1,7 +1,7 @@
 package es.redmic.models.es.geojson.tracking.common;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.vividsolutions.jts.geom.Point;
+import org.locationtech.jts.geom.Point;
 
 import es.redmic.models.es.geojson.GeoJSONFeatureType;
 import es.redmic.models.es.geojson.common.dto.ClusterPropertiesDTO;

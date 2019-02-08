@@ -1,7 +1,7 @@
 package es.redmic.models.es.tools.distribution.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 
 import es.redmic.models.es.common.model.BaseES;
 import es.redmic.models.es.geojson.GeoJsonObject;
