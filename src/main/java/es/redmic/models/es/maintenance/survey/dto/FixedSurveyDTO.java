@@ -6,6 +6,7 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.kjetland.jackson.jsonSchema.annotations.JsonSchemaIgnore;
 
+import es.redmic.models.es.common.constraintvalidate.url.ValidateUrl;
 import es.redmic.models.es.common.dto.HierarchicalDTO;
 
 public class FixedSurveyDTO extends HierarchicalDTO {
@@ -24,6 +25,12 @@ public class FixedSurveyDTO extends HierarchicalDTO {
 
 	@Size(min = 0, max = 250)
 	private String description;
+
+	// TODO: añadir @JsonSchemaFormat("url"). Url compleja que no cumple con la
+	// validación
+	@ValidateUrl
+	@Size(min = 0, max = 500)
+	private String dashboard;
 
 	public String getCode() {
 		return code;
@@ -56,5 +63,13 @@ public class FixedSurveyDTO extends HierarchicalDTO {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getDashboard() {
+		return dashboard;
+	}
+
+	public void setDashboard(String dashboard) {
+		this.dashboard = dashboard;
 	}
 }
