@@ -7,8 +7,9 @@ import javax.validation.ConstraintValidatorContext;
 
 public class PhoneNumberValidator implements ConstraintValidator<ValidatePhoneNumber, String> {
 
-	private static final Pattern REGEX_PATTERN = Pattern
-			.compile("^(00\\d\\d|\\+\\d\\d)? ?(\\d\\d\\d)-? ?(\\d\\d)-? ?(\\d)-? ?(\\d)-? ?(\\d\\d)$", Pattern.MULTILINE);
+	private static final Pattern REGEX_PATTERN = Pattern.compile(
+			"^(\\+\\d{1,3}|\\d{4})? ?(\\d{0,14})-? ?(\\d{0,14})-? ?(\\d{0,14})-? ?(\\d{0,14})-? ?(\\d{0,14})$",
+			Pattern.MULTILINE);
 
 	@Override
 	public boolean isValid(String phoneNumber, ConstraintValidatorContext cvc) {
