@@ -9,7 +9,7 @@ import es.redmic.test.unit.common.dto.CompleteDTOUtils;
 import es.redmic.test.unit.common.dto.DTOBaseTest;
 
 public class PlatformDTOTest extends DTOBaseTest<PlatformDTO> {
-	
+
 	private static PlatformDTO dto = new PlatformDTO();
 
 	@Before
@@ -47,7 +47,7 @@ public class PlatformDTOTest extends DTOBaseTest<PlatformDTO> {
 
 		checkDTOHasError(dto, SIZE_MESSAGE_TEMPLATE);
 	}
-	
+
 	@Test
 	public void validationDTO_ReturnSizeError_IfDescriptionExceedsSize() {
 
@@ -55,7 +55,7 @@ public class PlatformDTOTest extends DTOBaseTest<PlatformDTO> {
 
 		checkDTOHasError(dto, SIZE_MESSAGE_TEMPLATE);
 	}
-	
+
 	@Test
 	public void validationDTO_ReturnSizeError_IfNoteExceedsSize() {
 
@@ -71,11 +71,11 @@ public class PlatformDTOTest extends DTOBaseTest<PlatformDTO> {
 
 		checkDTOHasError(dto, SIZE_MESSAGE_TEMPLATE);
 	}
-	
+
 	@Test
 	public void validationDTO_ReturnSizeError_IfContactPhoneExceedsSize() {
 
-		dto.setContactPhone("453455544334");
+		dto.setContactPhone("45345554433423445553");
 
 		checkDTOHasError(dto, PHONE_NUMBER_MESSAGE_TEMPLATE);
 	}

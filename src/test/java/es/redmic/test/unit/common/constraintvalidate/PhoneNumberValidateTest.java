@@ -25,7 +25,7 @@ public class PhoneNumberValidateTest {
 
 		dto = CompleteDTOUtils.completeContactDTO();
 	}
-	
+
 	@Test
 	public void validatePhoneNumber_NoReturnError_IfFulfillConstraints() {
 
@@ -34,7 +34,7 @@ public class PhoneNumberValidateTest {
 		Set<ConstraintViolation<ContactDTO>> constraintViolations = validator.validate(dto);
 		assertEquals(0, constraintViolations.size());
 	}
-	
+
 	@Test
 	public void validatePhoneNumber_NoReturnError_IfContainSpaces() {
 
@@ -43,7 +43,7 @@ public class PhoneNumberValidateTest {
 		Set<ConstraintViolation<ContactDTO>> constraintViolations = validator.validate(dto);
 		assertEquals(0, constraintViolations.size());
 	}
-	
+
 	@Test
 	public void validatePhoneNumber_NoReturnError_IfContainPreffix() {
 
@@ -52,7 +52,7 @@ public class PhoneNumberValidateTest {
 		Set<ConstraintViolation<ContactDTO>> constraintViolations = validator.validate(dto);
 		assertEquals(0, constraintViolations.size());
 	}
-	
+
 	@Test
 	public void validatePhoneNumber_NoReturnError_IfContainSpacesAndPreffix() {
 
@@ -61,7 +61,7 @@ public class PhoneNumberValidateTest {
 		Set<ConstraintViolation<ContactDTO>> constraintViolations = validator.validate(dto);
 		assertEquals(0, constraintViolations.size());
 	}
-	
+
 	@Test
 	public void validationDTO_ReturnFormatError_IfPhoneIsBadFormat() {
 
@@ -69,16 +69,18 @@ public class PhoneNumberValidateTest {
 
 		Set<ConstraintViolation<ContactDTO>> constraintViolations = validator.validate(dto);
 		assertEquals(1, constraintViolations.size());
-		assertEquals("{redmic.validation.constraints.ValidatePhoneNumber.message}", constraintViolations.iterator().next().getMessageTemplate());
+		assertEquals("{redmic.validation.constraints.ValidatePhoneNumber.message}",
+				constraintViolations.iterator().next().getMessageTemplate());
 	}
-	
+
 	@Test
 	public void validationDTO_ReturnFormatError_IfPhoneExceedsSize() {
 
-		dto.setPhone("67633445555444");
+		dto.setPhone("67633445555444445555");
 
 		Set<ConstraintViolation<ContactDTO>> constraintViolations = validator.validate(dto);
 		assertEquals(1, constraintViolations.size());
-		assertEquals("{redmic.validation.constraints.ValidatePhoneNumber.message}", constraintViolations.iterator().next().getMessageTemplate());
+		assertEquals("{redmic.validation.constraints.ValidatePhoneNumber.message}",
+				constraintViolations.iterator().next().getMessageTemplate());
 	}
 }
