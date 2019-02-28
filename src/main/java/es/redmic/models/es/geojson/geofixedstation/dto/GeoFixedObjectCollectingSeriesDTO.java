@@ -1,6 +1,6 @@
 package es.redmic.models.es.geojson.geofixedstation.dto;
 
-import com.vividsolutions.jts.geom.LineString;
+import org.locationtech.jts.geom.LineString;
 
 import es.redmic.models.es.common.DataPrefixType;
 import es.redmic.models.es.geojson.GeoJSONFeatureType;

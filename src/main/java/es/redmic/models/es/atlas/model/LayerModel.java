@@ -2,7 +2,7 @@ package es.redmic.models.es.atlas.model;
 
 import java.util.List;
 
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 
 import es.redmic.models.es.administrative.model.ActivityReferences;
 import es.redmic.models.es.atlas.Contact;

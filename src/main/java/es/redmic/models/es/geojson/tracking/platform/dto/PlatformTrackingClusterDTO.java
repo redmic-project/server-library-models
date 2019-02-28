@@ -1,10 +1,12 @@
 package es.redmic.models.es.geojson.tracking.platform.dto;
 
-import com.vividsolutions.jts.algorithm.CentroidPoint;
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryFactory;
-import com.vividsolutions.jts.geom.Point;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.locationtech.jts.algorithm.Centroid;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.GeometryFactory;
+import org.locationtech.jts.geom.Point;
 
 import es.redmic.models.es.common.DataPrefixType;
 import es.redmic.models.es.geojson.GeoJSONFeatureType;
@@ -16,9 +18,9 @@ import es.redmic.models.es.geojson.common.model.GeoPointData;
 
 public class PlatformTrackingClusterDTO extends MetaFeatureDTO<ClusterPropertiesDTO, Point> {
 
-	private CentroidPoint centroidPoint = new CentroidPoint();
-	
 	private GeometryFactory geomFactory = new GeometryFactory();
+
+	private List<Geometry> geometries = new ArrayList<Geometry>();
 
 	public PlatformTrackingClusterDTO() {
 
@@ -27,12 +29,12 @@ public class PlatformTrackingClusterDTO extends MetaFeatureDTO<ClusterProperties
 		setProperties(new ClusterPropertiesDTO());
 	}
 
-	public void addPoint(GeoHitWrapper<?,Point> point) {
+	public void addPoint(GeoHitWrapper<?, Point> point) {
 
 		GeoPointData feature = (GeoPointData) point.get_source();
 		getProperties().addDate(feature.getProperties().getInTrack().getDate());
 		getProperties().addUuid(feature.getUuid());
-		
+
 		MetaDataFeatureDTO meta = new MetaDataFeatureDTO();
 		meta.setCategory(DataPrefixType.PLATFORM_TRACKING);
 		meta.setVersion(point.get_version());
@@ -42,8 +44,8 @@ public class PlatformTrackingClusterDTO extends MetaFeatureDTO<ClusterProperties
 
 	private void updateCentroidPoint(Geometry point) {
 
-		centroidPoint.add(point);
-		Coordinate centroid = centroidPoint.getCentroid();
-		setGeometry(geomFactory.createPoint(centroid));
+		geometries.add(point);
+		Centroid centroid = new Centroid(geomFactory.buildGeometry(geometries));
+		setGeometry(geomFactory.createPoint(centroid.getCentroid()));
 	}
 }

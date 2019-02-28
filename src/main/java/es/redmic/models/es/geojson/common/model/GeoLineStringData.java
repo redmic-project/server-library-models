@@ -1,6 +1,6 @@
 package es.redmic.models.es.geojson.common.model;
 
-import com.vividsolutions.jts.geom.LineString;
+import org.locationtech.jts.geom.LineString;
 
 import es.redmic.models.es.geojson.GeoJSONFeatureType;
 import es.redmic.models.es.geojson.properties.model.GeoDataProperties;

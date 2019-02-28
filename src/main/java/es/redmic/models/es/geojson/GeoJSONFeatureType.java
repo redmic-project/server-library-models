@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum GeoJSONFeatureType implements BaseEnumType {
-	
+
 	FEATURE(Constants.FEATURE);
 
 	final String type;
@@ -30,7 +30,7 @@ public enum GeoJSONFeatureType implements BaseEnumType {
 	public String toString() {
 		return type;
 	}
-	
+
 	public static class Constants {
 		public static final String FEATURE = "Feature";
 	}

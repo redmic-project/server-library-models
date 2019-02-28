@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 
 import com.kjetland.jackson.jsonSchema.annotations.JsonSchemaIgnore;
 import com.kjetland.jackson.jsonSchema.annotations.JsonSchemaNotNull;
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 
 import es.redmic.models.es.common.dto.DTOImplement;
 import es.redmic.models.es.geojson.GeoJSONFeatureType;

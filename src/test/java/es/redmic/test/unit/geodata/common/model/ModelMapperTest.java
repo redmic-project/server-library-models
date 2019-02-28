@@ -1,34 +1,28 @@
 package es.redmic.test.unit.geodata.common.model;
 
 import java.io.IOException;
+import java.nio.file.Files;
 
-import org.apache.commons.io.IOUtils;
 import org.json.JSONException;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.runners.MockitoJUnitRunner;
 import org.skyscreamer.jsonassert.JSONAssert;
+import org.springframework.core.io.ClassPathResource;
 
-import com.bedatadriven.jackson.datatype.jts.JtsModule;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import es.redmic.jts4jackson.module.JTSModule;
 import es.redmic.models.es.geojson.common.model.GeoPointData;
 
-@RunWith(MockitoJUnitRunner.class)
 public class ModelMapperTest {
 
 	private String dataFile = "/geodata/model/allData.json";
-	private Module jTSModule = new JtsModule();
-	
-	@InjectMocks
-	ObjectMapper mapper;
+
+	ObjectMapper mapper = new ObjectMapper();
 
 	@BeforeClass
 	public static void setUp() {
@@ -40,17 +34,17 @@ public class ModelMapperTest {
 	}
 
 	@Test
-	public void deserializeAndSerializeModel() throws JsonParseException, JsonMappingException, IOException, JSONException {
+	public void deserializeAndSerializeModel()
+			throws JsonParseException, JsonMappingException, IOException, JSONException {
 
-		mapper.registerModule(jTSModule);
+		mapper.registerModule(new JTSModule());
 		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-		
-		GeoPointData model = mapper.readValue(getClass().getResource(dataFile).openStream(),
-				GeoPointData.class);
 
-		String source = IOUtils.toString(getClass().getResource(dataFile).openStream()); 
+		GeoPointData model = mapper.readValue(getClass().getResource(dataFile).openStream(), GeoPointData.class);
+
+		String source = new String(Files.readAllBytes(new ClassPathResource(dataFile).getFile().toPath()));
 		String expected = mapper.writeValueAsString(model);
-		
+
 		JSONAssert.assertEquals(expected, source, false);
 	}
 }
