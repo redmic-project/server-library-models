@@ -115,6 +115,7 @@
 			"path": "r.ft-14",
 			"name": "Boya OAG Granadilla",
 			"description": "Estación Boya del OAG en Granadilla con múltiples dispositivos",
+			"dashboard": "https://redmic.es/dashboard",
 			"classification": [
 				{
 					"type": {

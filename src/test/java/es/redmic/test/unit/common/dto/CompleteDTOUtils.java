@@ -331,6 +331,7 @@ public class CompleteDTOUtils {
 		station.setCode("TGr00");
 		station.setPath("r.TGr00");
 		station.setPrefixType("pb");
+		station.setDashboard("http://redmic.net/dashboard");
 
 		return station;
 	}

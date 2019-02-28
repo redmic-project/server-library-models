@@ -60,4 +60,20 @@ public class GeoFixedTimeSeriesPropertiesDTOTest extends DTOBaseTest<FixedSurvey
 
 		checkDTOHasError(dto, SIZE_MESSAGE_TEMPLATE);
 	}
+
+	@Test
+	public void validationDTO_ReturnSizeError_IfDashboardExceedsSize() {
+
+		dto.getSite().setDashboard("http://" + generateString(501) + ".com");
+
+		checkDTOHasError(dto, SIZE_MESSAGE_TEMPLATE);
+	}
+
+	@Test
+	public void validationDTO_ReturnFormatError_IfDashboardUrlIsBadFormat() {
+
+		dto.getSite().setDashboard("htttp//:ff.cc");
+
+		checkDTOHasError(dto, URL_MESSAGE_TEMPLATE);
+	}
 }
