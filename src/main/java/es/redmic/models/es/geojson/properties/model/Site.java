@@ -14,26 +14,28 @@ import es.redmic.models.es.geodata.common.model.PointCommonFields;
 import es.redmic.models.es.maintenance.common.model.ClassificationItem;
 
 public class Site extends PointCommonFields {
-	
+
 	private String path;
-	
+
 	private String name;
-	
+
 	private String code;
-	
+
 	private String description;
-	
+
 	private String remark;
-	
+
 	private List<ClassificationItem> classification;
 
 	private Double rotate;
-	
+
 	private List<Metric> metrics;
-	
+
 	private DateTime date;
-	
+
 	private String url;
+
+	private String dashboard;
 
 	public String getPath() {
 		return path;
@@ -98,12 +100,12 @@ public class Site extends PointCommonFields {
 	public void setMetrics(List<Metric> metrics) {
 		this.metrics = metrics;
 	}
-	
+
 	@JsonSerialize(using = CustomDateTimeSerializer.class)
 	public DateTime getDate() {
 		return date;
 	}
-	
+
 	@JsonDeserialize(using = CustomDateTimeDeserializer.class)
 	public void setDate(DateTime date) {
 		this.date = date;
@@ -115,5 +117,13 @@ public class Site extends PointCommonFields {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	public String getDashboard() {
+		return dashboard;
+	}
+
+	public void setDashboard(String dashboard) {
+		this.dashboard = dashboard;
 	}
 }
