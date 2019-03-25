@@ -20,10 +20,21 @@ public class DataAccessibilityQueryDTO extends MetadataQueryDTO {
 		super();
 	}
 
+	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
+	private String activityId;
+
 	@JsonView(value = { JsonViewsForQueryDTO.Administrator.class })
 	@Size(max = 4)
 	@JsonSchemaDefault("[2]")
 	private List<Long> accessibilityIds;
+
+	public String getActivityId() {
+		return activityId;
+	}
+
+	public void setActivityId(String activityId) {
+		this.activityId = activityId;
+	}
 
 	public List<Long> getAccessibilityIds() {
 		return accessibilityIds;
@@ -33,6 +44,7 @@ public class DataAccessibilityQueryDTO extends MetadataQueryDTO {
 		this.accessibilityIds = accessibilityIds;
 	}
 
+	@Override
 	public void addAccessibilityIds(List<Long> accessibilityIds) {
 
 		if (accessibilityIds != null && accessibilityIds.size() > 0) {
