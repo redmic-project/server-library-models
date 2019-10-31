@@ -29,12 +29,13 @@ import es.redmic.models.es.common.view.JsonViewsForQueryDTO;
 
 public abstract class BaseTextQueryDTO {
 
-	@JsonView(value={JsonViewsForQueryDTO.Guest.class})
+	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
 	@NotNull
-	@Size(min=2)
+	@Size(min = 2)
 	String text;
-	
-	@JsonView(value={JsonViewsForQueryDTO.Guest.class})
+
+	@NotNull
+	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
 	String[] searchFields;
 
 	public BaseTextQueryDTO() {
