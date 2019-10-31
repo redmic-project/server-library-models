@@ -28,7 +28,6 @@ import java.util.Map;
 import es.redmic.models.es.administrative.dto.ActivityDTO;
 import es.redmic.models.es.administrative.dto.ProgramDTO;
 import es.redmic.models.es.administrative.dto.ProjectDTO;
-import es.redmic.models.es.atlas.dto.LayerDTO;
 import es.redmic.models.es.geojson.area.dto.AreaDTO;
 import es.redmic.models.es.geojson.citation.dto.CitationDTO;
 import es.redmic.models.es.geojson.geofixedstation.dto.GeoFixedObjectCollectingSeriesDTO;
@@ -113,7 +112,6 @@ public final class DataPrefixType {
 		classesHash.put(ToponymDTO.class, new Type(TOPONYM));
 		classesHash.put(TimeSeriesDTO.class, new Type(TIMESERIES));
 		classesHash.put(ObjectCollectingSeriesDTO.class, new Type(COLLECTINGSERIES));
-		classesHash.put(LayerDTO.class, new Type(LAYERS));
 		classesHash.put(ActivityDTO.class, new Type(ACTIVITY));
 		classesHash.put(ProjectDTO.class, new Type(PROJECT));
 		classesHash.put(ProgramDTO.class, new Type(PROGRAM));

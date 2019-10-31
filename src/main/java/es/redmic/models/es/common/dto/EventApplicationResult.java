@@ -46,6 +46,12 @@ public class EventApplicationResult {
 		this.exceptionArguments = arguments;
 	}
 
+	public EventApplicationResult(String exeptionType, String key, String value) {
+		this.success = false;
+		this.exeptionType = exeptionType;
+		addExceptionArgument(key, value);
+	}
+
 	public boolean isSuccess() {
 		return success;
 	}
