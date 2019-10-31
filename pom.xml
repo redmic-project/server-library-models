@@ -26,7 +26,7 @@
 		<java.version>1.8</java.version>
 
 		<!-- REDMIC -->
-		<redmic.exceptions.version>0.8.0</redmic.exceptions.version>
+		<redmic.exceptions.version>0.10.0</redmic.exceptions.version>
 		<redmic.jackson-jsonschema.version>0.8.0-feature-changeUrlType</redmic.jackson-jsonschema.version>
 		<redmic.jts4jackson.version>0.0.1</redmic.jts4jackson.version>
 		
