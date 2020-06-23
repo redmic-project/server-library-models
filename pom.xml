@@ -31,7 +31,7 @@
 		<redmic.jts4jackson.version>0.0.1</redmic.jts4jackson.version>
 		
 		<!-- OTHERS -->
-		<commons-beanutils.version>1.9.3</commons-beanutils.version>
+		<commons-beanutils.version>1.9.4</commons-beanutils.version>
 		<geotools.version>20.1</geotools.version>
 		
 		<org.mockito-version>1.10.19</org.mockito-version>
