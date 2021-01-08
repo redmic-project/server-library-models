@@ -1,11 +1,15 @@
 package es.redmic.models.es.administrative.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.kjetland.jackson.jsonSchema.annotations.JsonSchemaIgnore;
+import com.kjetland.jackson.jsonSchema.annotations.JsonSchemaUniqueItemsByRequiredProperties;
 import com.kjetland.jackson.jsonSchema.annotations.JsonSchemaUrl;
 
 import es.redmic.models.es.common.deserializer.CustomRelationDeserializer;
@@ -29,8 +33,12 @@ public class ActivityDTO extends ActivityBaseDTO {
 	@JsonSchemaIgnore
 	private String activityCategory;
 
+	@JsonSchemaUniqueItemsByRequiredProperties
+	private List<ActivityResourceDTO> resources;
+
 	public ActivityDTO() {
 		super();
+		this.resources = new ArrayList<>();
 	}
 
 	public AncestorActivityDTO getParent() {
@@ -55,5 +63,13 @@ public class ActivityDTO extends ActivityBaseDTO {
 
 	public void setActivityCategory(String activityCategory) {
 		this.activityCategory = activityCategory;
+	}
+
+	public List<ActivityResourceDTO> getResources() {
+		return this.resources;
+	}
+
+	public void setResources(List<ActivityResourceDTO> resources) {
+		this.resources = resources;
 	}
 }

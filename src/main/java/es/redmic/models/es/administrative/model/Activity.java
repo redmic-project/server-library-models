@@ -1,5 +1,7 @@
 package es.redmic.models.es.administrative.model;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -17,8 +19,10 @@ public class Activity extends ActivityBase {
 
 	@JsonProperty("activityType")
 	public ActivityType activitytype;
-	
+
 	private String activityCategory;
+
+	private List<ActivityResource> resources;
 
 	public Activity() {
 		super();
@@ -38,5 +42,13 @@ public class Activity extends ActivityBase {
 
 	public void setActivityCategory(String activityCategory) {
 		this.activityCategory = activityCategory;
+	}
+
+	public List<ActivityResource> getResources() {
+		return resources;
+	}
+
+	public void setResources(List<ActivityResource> resources) {
+		this.resources = resources;
 	}
 }
