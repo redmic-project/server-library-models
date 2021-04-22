@@ -14,7 +14,7 @@
 	<groupId>es.redmic.lib</groupId>
 	<artifactId>models</artifactId>
 	<packaging>jar</packaging>
-	<version>0.11.0-feature-cleanTimeSeries</version>
+	<version>0.12.0</version>
 	<name>Models</name>
 	<description>Input-output classes and models</description>
 
@@ -29,11 +29,11 @@
 		<redmic.exceptions.version>0.10.0</redmic.exceptions.version>
 		<redmic.jackson-jsonschema.version>0.8.0-feature-changeUrlType</redmic.jackson-jsonschema.version>
 		<redmic.jts4jackson.version>0.0.1</redmic.jts4jackson.version>
-		
+
 		<!-- OTHERS -->
 		<commons-beanutils.version>1.9.3</commons-beanutils.version>
 		<geotools.version>20.1</geotools.version>
-		
+
 		<org.mockito-version>1.10.19</org.mockito-version>
 	</properties>
 
@@ -52,7 +52,7 @@
 			<artifactId>jackson-jsonschema</artifactId>
 			<version>${redmic.jackson-jsonschema.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>es.redmic.lib</groupId>
 			<artifactId>jts4jackson</artifactId>
