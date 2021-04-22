@@ -9,9 +9,9 @@ package es.redmic.models.es.common;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -39,13 +39,12 @@ import es.redmic.models.es.geojson.tracking.animal.dto.AnimalTrackingDTO;
 import es.redmic.models.es.geojson.tracking.common.ElementTrackingDTO;
 import es.redmic.models.es.geojson.tracking.platform.dto.PlatformTrackingDTO;
 import es.redmic.models.es.series.objectcollecting.dto.ObjectCollectingSeriesDTO;
-import es.redmic.models.es.series.timeseries.dto.TimeSeriesDTO;
 
 @SuppressWarnings("serial")
 public final class DataPrefixType {
 
 	// @formatter:off
-	
+
 	public static final String CITATION = "ci",
 			ANIMAL_TRACKING = "at",
 			PLATFORM_TRACKING = "pt",
@@ -63,7 +62,7 @@ public final class DataPrefixType {
 			PROGRAM = "pg",
 			LAYERS = "ly",
 			OTHER = "ot";
-	
+
 	// @formatter:on
 
 	protected static final Map<Class<?>, Type> classesHash;
@@ -110,7 +109,7 @@ public final class DataPrefixType {
 			}
 		}));
 		classesHash.put(ToponymDTO.class, new Type(TOPONYM));
-		classesHash.put(TimeSeriesDTO.class, new Type(TIMESERIES));
+		//classesHash.put(TimeSeriesDTO.class, new Type(TIMESERIES));
 		classesHash.put(ObjectCollectingSeriesDTO.class, new Type(COLLECTINGSERIES));
 		classesHash.put(ActivityDTO.class, new Type(ACTIVITY));
 		classesHash.put(ProjectDTO.class, new Type(PROJECT));
