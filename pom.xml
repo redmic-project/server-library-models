@@ -33,6 +33,14 @@
 		<!-- OTHERS -->
 		<commons-beanutils.version>1.9.3</commons-beanutils.version>
 		<geotools.version>20.1</geotools.version>
+		<commons-io.version>2.6</commons-io.version>
+		<jackson-datatype-jts.version>2.4</jackson-datatype-jts.version>
+
+		<hibernate-validator.version>6.0.8.Final</hibernate-validator.version>
+		<org.mockito-version>1.10.19</org.mockito-version>
+
+		<!-- Version plugins -->
+		<jacoco.version>0.8.1</jacoco.version>
 
 		<org.mockito-version>1.10.19</org.mockito-version>
 	</properties>
@@ -99,6 +107,13 @@
 			<version>${geotools.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
 		<!-- Jackson -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.datatype</groupId>
@@ -117,10 +132,29 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!-- Logs -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
 		<!-- test -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>${org.mockito-version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.skyscreamer</groupId>
+			<artifactId>jsonassert</artifactId>
 			<scope>test</scope>
 		</dependency>
 

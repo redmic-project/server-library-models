@@ -9,9 +9,9 @@ package es.redmic.models.es.administrative.model;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,6 +20,7 @@ package es.redmic.models.es.administrative.model;
  * #L%
  */
 
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -37,8 +38,10 @@ public class Activity extends ActivityBase {
 
 	@JsonProperty("activityType")
 	public ActivityType activitytype;
-	
+
 	private String activityCategory;
+
+	private List<ActivityResource> resources;
 
 	public Activity() {
 		super();
@@ -58,5 +61,13 @@ public class Activity extends ActivityBase {
 
 	public void setActivityCategory(String activityCategory) {
 		this.activityCategory = activityCategory;
+	}
+
+	public List<ActivityResource> getResources() {
+		return resources;
+	}
+
+	public void setResources(List<ActivityResource> resources) {
+		this.resources = resources;
 	}
 }
