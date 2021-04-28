@@ -25,11 +25,11 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import es.redmic.models.es.common.model.BaseAbstractStringES;
+import es.redmic.models.es.common.model.BaseES;
 import es.redmic.models.es.common.model.SearchWrapper;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
-public class SeriesSearchWrapper<TModel extends BaseAbstractStringES> extends SearchWrapper {
+public class SeriesSearchWrapper<TModel extends BaseES<?>> extends SearchWrapper {
 
 	private SeriesHitsWrapper<TModel> hits;
 

@@ -22,11 +22,11 @@ package es.redmic.models.es.series.common.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import es.redmic.models.es.common.model.BaseAbstractStringES;
+import es.redmic.models.es.common.model.BaseES;
 import es.redmic.models.es.common.model.HitWrapper;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
-public class SeriesHitWrapper<TModel extends BaseAbstractStringES> extends HitWrapper {
+public class SeriesHitWrapper<TModel extends BaseES<?>> extends HitWrapper {
 
 	private TModel _source;
 
