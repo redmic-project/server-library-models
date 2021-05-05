@@ -28,21 +28,18 @@
 		<!-- REDMIC -->
 		<redmic.exceptions.version>0.10.0</redmic.exceptions.version>
 		<redmic.jackson-jsonschema.version>0.8.0-feature-changeUrlType</redmic.jackson-jsonschema.version>
-		<redmic.jts4jackson.version>0.2.0</redmic.jts4jackson.version>
 
 		<!-- OTHERS -->
-		<commons-beanutils.version>1.9.3</commons-beanutils.version>
+		<commons-beanutils.version>1.9.4</commons-beanutils.version>
 		<geotools.version>20.1</geotools.version>
-		<commons-io.version>2.6</commons-io.version>
-		<jackson-datatype-jts.version>2.4</jackson-datatype-jts.version>
+		<commons-io.version>2.8.0</commons-io.version>
+		<jackson-datatype-jts.version>1.0-2.7</jackson-datatype-jts.version>
 
 		<hibernate-validator.version>6.0.8.Final</hibernate-validator.version>
 		<org.mockito-version>1.10.19</org.mockito-version>
 
 		<!-- Version plugins -->
 		<jacoco.version>0.8.1</jacoco.version>
-
-		<org.mockito-version>1.10.19</org.mockito-version>
 	</properties>
 
 	<dependencies>
@@ -61,12 +58,6 @@
 			<version>${redmic.jackson-jsonschema.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>es.redmic.lib</groupId>
-			<artifactId>jts4jackson</artifactId>
-			<version>${redmic.jts4jackson.version}</version>
-			<scope>provided</scope>
-		</dependency>
 
 		<!-- Spring -->
 		<!-- Para multpartfile -->
@@ -81,6 +72,12 @@
 		</dependency>
 
 		<!-- Otros -->
+		<dependency>
+			<groupId>com.graphhopper.external</groupId>
+			<artifactId>jackson-datatype-jts</artifactId>
+			<version>${jackson-datatype-jts.version}</version>
+			<scope>provided</scope>
+		</dependency>
 
 		<!-- Bean compare -->
 		<dependency>
