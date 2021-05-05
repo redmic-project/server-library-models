@@ -31,13 +31,13 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.locationtech.jts.geom.Point;
 
+import com.bedatadriven.jackson.datatype.jts.JtsModule;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import es.redmic.jts4jackson.module.JTSModule;
 import es.redmic.models.es.geojson.common.model.GeoHitWrapper;
 import es.redmic.models.es.geojson.common.model.GeoSearchWrapper;
 import es.redmic.models.es.geojson.properties.model.GeoDataProperties;
@@ -62,7 +62,7 @@ public class GeoSearchWrapperMapperTest {
 	public void deserializeAndSerializeModel()
 			throws JsonParseException, JsonMappingException, IOException, JSONException {
 
-		mapper.registerModule(new JTSModule());
+		mapper.registerModule(new JtsModule());
 		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
 		TypeReference<GeoSearchWrapper<GeoDataProperties, Point>> typeRef = new TypeReference<GeoSearchWrapper<GeoDataProperties, Point>>() {
