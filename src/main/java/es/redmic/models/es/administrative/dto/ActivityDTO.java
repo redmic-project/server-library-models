@@ -21,6 +21,8 @@ package es.redmic.models.es.administrative.dto;
  */
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -66,6 +68,7 @@ public class ActivityDTO extends ActivityBaseDTO {
 	@JsonSchemaUrl(value = "controller.mapping.THEME_INSPIRE")
 	private ThemeInspireDTO themeInspire;
 
+	@Size(max = 5000)
 	private String license;
 
 	private String spatialExtension;
