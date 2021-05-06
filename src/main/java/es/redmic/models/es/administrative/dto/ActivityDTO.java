@@ -61,6 +61,9 @@ public class ActivityDTO extends ActivityBaseDTO {
 	@JsonSchemaUniqueItemsByRequiredProperties
 	private List<ActivityResourceDTO> resources;
 
+	@JsonIgnoreProperties(value = { "_meta" })
+	@JsonDeserialize(using = CustomRelationDeserializer.class)
+	@JsonSchemaUrl(value = "controller.mapping.THEME_INSPIRE")
 	private ThemeInspireDTO themeInspire;
 
 	private String license;
