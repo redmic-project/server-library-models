@@ -81,7 +81,7 @@ public class HierarchicalUtils {
 	public static String getGrandparentId(String path) {
 
 		String[] ancestorIds = getAncestorsIds(path);
-		if(ancestorIds == null || ancestorIds.length < 3)
+		if(ancestorIds == null || ancestorIds.length < 2)
 			return null;
 		return ancestorIds[ancestorIds.length - 2];
 	}
