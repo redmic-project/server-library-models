@@ -32,6 +32,7 @@ import com.kjetland.jackson.jsonSchema.annotations.JsonSchemaUrl;
 
 import es.redmic.models.es.common.deserializer.CustomRelationDeserializer;
 import es.redmic.models.es.maintenance.administrative.dto.ActivityTypeDTO;
+import es.redmic.models.es.maintenance.administrative.dto.ThemeInspireDTO;
 
 public class ActivityDTO extends ActivityBaseDTO {
 
@@ -41,6 +42,12 @@ public class ActivityDTO extends ActivityBaseDTO {
 	@JsonDeserialize(using = CustomRelationDeserializer.class)
 	@JsonSchemaUrl(value = "controller.mapping.PROJECT")
 	private AncestorActivityDTO parent;
+
+	@JsonIgnoreProperties(value = { "_meta" })
+	@JsonSerialize(as = AncestorActivityDTO.class)
+	@JsonDeserialize(using = CustomRelationDeserializer.class)
+	@JsonSchemaIgnore
+	private AncestorActivityDTO grandparent;
 
 	@JsonIgnoreProperties(value = { "_meta" })
 	@NotNull
@@ -54,6 +61,14 @@ public class ActivityDTO extends ActivityBaseDTO {
 	@JsonSchemaUniqueItemsByRequiredProperties
 	private List<ActivityResourceDTO> resources;
 
+	private ThemeInspireDTO themeInspire;
+
+	private String license;
+
+	private String spatialExtension;
+
+	private Boolean starred;
+
 	public ActivityDTO() {
 		super();
 		this.resources = new ArrayList<>();
@@ -65,6 +80,14 @@ public class ActivityDTO extends ActivityBaseDTO {
 
 	public void setParent(AncestorActivityDTO parent) {
 		this.parent = parent;
+	}
+
+	public AncestorActivityDTO getGrandparent() {
+		return this.grandparent;
+	}
+
+	public void setGrandparent(AncestorActivityDTO grandparent) {
+		this.grandparent = grandparent;
 	}
 
 	public ActivityTypeDTO getActivityType() {
@@ -89,5 +112,37 @@ public class ActivityDTO extends ActivityBaseDTO {
 
 	public void setResources(List<ActivityResourceDTO> resources) {
 		this.resources = resources;
+	}
+
+	public ThemeInspireDTO getThemeInspire() {
+		return this.themeInspire;
+	}
+
+	public void setThemeInspire(ThemeInspireDTO themeInspire) {
+		this.themeInspire = themeInspire;
+	}
+
+	public String getLicense() {
+		return this.license;
+	}
+
+	public void setLicense(String license) {
+		this.license = license;
+	}
+
+	public String getSpatialExtension() {
+		return this.spatialExtension;
+	}
+
+	public void setSpatialExtension(String spatialExtension) {
+		this.spatialExtension = spatialExtension;
+	}
+
+	public Boolean getStarred() {
+		return this.starred;
+	}
+
+	public void setStarred(Boolean starred) {
+		this.starred = starred;
 	}
 }
