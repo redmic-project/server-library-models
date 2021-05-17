@@ -21,6 +21,7 @@ package es.redmic.models.es.common.query.dto;
  */
 
 import javax.validation.Valid;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonView;
@@ -46,6 +47,16 @@ public class DataQueryDTO extends DataAccessibilityQueryDTO {
 	@Valid
 	private DateLimitsDTO dateLimits;
 
+	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
+	private Boolean starred;
+
+	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
+	private Boolean resources;
+
+	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
+	@Size(min = 2)
+	private String resourceName;
+
 	public Boolean queryIsEmpty() {
 		return ((getBbox() == null) && (getPostFilter() == null) && (getText() == null));
 	}
@@ -64,5 +75,29 @@ public class DataQueryDTO extends DataAccessibilityQueryDTO {
 
 	public void setDateLimits(DateLimitsDTO dateLimits) {
 		this.dateLimits = dateLimits;
+	}
+
+	public Boolean getStarred() {
+		return this.starred;
+	}
+
+	public void setStarred(Boolean starred) {
+		this.starred = starred;
+	}
+
+	public Boolean getResources() {
+		return this.resources;
+	}
+
+	public void setResources(Boolean resources) {
+		this.resources = resources;
+	}
+
+	public String getResourceName() {
+		return this.resourceName;
+	}
+
+	public void setResourceName(String resourceName) {
+		this.resourceName = resourceName;
 	}
 }
