@@ -57,6 +57,30 @@ public class DataQueryDTO extends DataAccessibilityQueryDTO {
 	@Size(min = 2)
 	private String resourceName;
 
+	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
+	@Size(min = 2)
+	private String document;
+
+	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
+	@Size(min = 2)
+	private String contact;
+
+	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
+	@Size(min = 2)
+	private String organisation;
+
+	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
+	@Size(min = 2)
+	private String platform;
+
+	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
+	@Size(min = 2)
+	private String project;
+
+	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
+	@Size(min = 2)
+	private String program;
+
 	public Boolean queryIsEmpty() {
 		return ((getBbox() == null) && (getPostFilter() == null) && (getText() == null));
 	}
@@ -99,5 +123,53 @@ public class DataQueryDTO extends DataAccessibilityQueryDTO {
 
 	public void setResourceName(String resourceName) {
 		this.resourceName = resourceName;
+	}
+
+	public String getDocument() {
+		return this.document;
+	}
+
+	public void setDocument(String document) {
+		this.document = document;
+	}
+
+	public String getContact() {
+		return this.contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+
+	public String getOrganisation() {
+		return this.organisation;
+	}
+
+	public void setOrganisation(String organisation) {
+		this.organisation = organisation;
+	}
+
+	public String getPlatform() {
+		return this.platform;
+	}
+
+	public void setPlatform(String platform) {
+		this.platform = platform;
+	}
+
+	public String getProject() {
+		return this.project;
+	}
+
+	public void setProject(String project) {
+		this.project = project;
+	}
+
+	public String getProgram() {
+		return this.program;
+	}
+
+	public void setProgram(String program) {
+		this.program = program;
 	}
 }
