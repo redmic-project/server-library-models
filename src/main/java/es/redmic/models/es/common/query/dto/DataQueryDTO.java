@@ -81,6 +81,9 @@ public class DataQueryDTO extends DataAccessibilityQueryDTO {
 	@Size(min = 2)
 	private String program;
 
+	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
+	private Integer status;
+
 	public Boolean queryIsEmpty() {
 		return ((getBbox() == null) && (getPostFilter() == null) && (getText() == null));
 	}
@@ -171,5 +174,13 @@ public class DataQueryDTO extends DataAccessibilityQueryDTO {
 
 	public void setProgram(String program) {
 		this.program = program;
+	}
+
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
 }
