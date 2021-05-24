@@ -51,11 +51,11 @@ public class DataQueryDTO extends DataAccessibilityQueryDTO {
 	private Boolean starred;
 
 	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
-	private Boolean resources;
+	private Boolean hasResource;
 
 	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
 	@Size(min = 2)
-	private String resourceName;
+	private String resource;
 
 	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
 	@Size(min = 2)
@@ -112,20 +112,20 @@ public class DataQueryDTO extends DataAccessibilityQueryDTO {
 		this.starred = starred;
 	}
 
-	public Boolean getResources() {
-		return this.resources;
+	public Boolean getHasResource() {
+		return this.hasResource;
 	}
 
-	public void setResources(Boolean resources) {
-		this.resources = resources;
+	public void setHasResource(Boolean hasResource) {
+		this.hasResource = hasResource;
 	}
 
-	public String getResourceName() {
-		return this.resourceName;
+	public String getResource() {
+		return this.resource;
 	}
 
-	public void setResourceName(String resourceName) {
-		this.resourceName = resourceName;
+	public void setResource(String resource) {
+		this.resource = resource;
 	}
 
 	public String getDocument() {
