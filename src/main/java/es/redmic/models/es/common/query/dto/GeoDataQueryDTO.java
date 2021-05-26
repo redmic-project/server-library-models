@@ -33,7 +33,7 @@ import com.kjetland.jackson.jsonSchema.annotations.JsonSchemaNotNull;
 
 import es.redmic.models.es.common.view.JsonViewsForQueryDTO;
 
-@JsonFilter("GeoDataQueryDTO")
+@JsonFilter("DataQueryDTO")
 @JsonSchemaNotNull
 public class GeoDataQueryDTO extends DataAccessibilityQueryDTO {
 
