@@ -9,9 +9,9 @@ package es.redmic.models.es.geojson.common.model;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -29,19 +29,9 @@ import es.redmic.models.es.common.model.HitWrapper;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GeoHitWrapper<TProperties extends Properties, TGeometry extends Geometry> extends HitWrapper {
 
-	private String _parent;
-
 	private Feature<TProperties, TGeometry> _source;
 
 	private InnerHits inner_hits;
-
-	public String get_parent() {
-		return _parent;
-	}
-
-	public void set_parent(String _parent) {
-		this._parent = _parent;
-	}
 
 	public Feature<TProperties, TGeometry> get_source() {
 		return _source;

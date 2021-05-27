@@ -15,8 +15,6 @@
 				"_type": "geodata",
 				"_id": "f9a86738-7077-4551-b166-83bbc144e700",
 				"_score": 1,
-				"_routing": "48",
-				"_parent": "48",
 				"_source": {
 					"id": 14,
 					"uuid": "sdsd323sdds_3ed",
@@ -30,6 +28,7 @@
 						]
 					},
 					"properties": {
+						"activityId": "48",
 						"inTrackIds": [
 							"tr-124"
 						],
