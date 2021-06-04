@@ -54,32 +54,25 @@ public class DataQueryDTO extends DataAccessibilityQueryDTO {
 	private Boolean hasResource;
 
 	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
-	@Size(min = 2)
-	private String resource;
+	private Integer resource;
 
 	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
-	@Size(min = 2)
-	private String document;
+	private Integer document;
 
 	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
-	@Size(min = 2)
-	private String contact;
+	private Integer contact;
 
 	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
-	@Size(min = 2)
-	private String organisation;
+	private Integer organisation;
 
 	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
-	@Size(min = 2)
-	private String platform;
+	private Integer platform;
 
 	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
-	@Size(min = 2)
-	private String project;
+	private Integer project;
 
 	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
-	@Size(min = 2)
-	private String program;
+	private Integer program;
 
 	@JsonView(value = { JsonViewsForQueryDTO.Guest.class })
 	private Integer status;
@@ -120,59 +113,59 @@ public class DataQueryDTO extends DataAccessibilityQueryDTO {
 		this.hasResource = hasResource;
 	}
 
-	public String getResource() {
+	public Integer getResource() {
 		return this.resource;
 	}
 
-	public void setResource(String resource) {
+	public void setResource(Integer resource) {
 		this.resource = resource;
 	}
 
-	public String getDocument() {
+	public Integer getDocument() {
 		return this.document;
 	}
 
-	public void setDocument(String document) {
+	public void setDocument(Integer document) {
 		this.document = document;
 	}
 
-	public String getContact() {
+	public Integer getContact() {
 		return this.contact;
 	}
 
-	public void setContact(String contact) {
+	public void setContact(Integer contact) {
 		this.contact = contact;
 	}
 
-	public String getOrganisation() {
+	public Integer getOrganisation() {
 		return this.organisation;
 	}
 
-	public void setOrganisation(String organisation) {
+	public void setOrganisation(Integer organisation) {
 		this.organisation = organisation;
 	}
 
-	public String getPlatform() {
+	public Integer getPlatform() {
 		return this.platform;
 	}
 
-	public void setPlatform(String platform) {
+	public void setPlatform(Integer platform) {
 		this.platform = platform;
 	}
 
-	public String getProject() {
+	public Integer getProject() {
 		return this.project;
 	}
 
-	public void setProject(String project) {
+	public void setProject(Integer project) {
 		this.project = project;
 	}
 
-	public String getProgram() {
+	public Integer getProgram() {
 		return this.program;
 	}
 
-	public void setProgram(String program) {
+	public void setProgram(Integer program) {
 		this.program = program;
 	}
 
