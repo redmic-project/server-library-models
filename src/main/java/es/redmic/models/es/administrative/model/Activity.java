@@ -46,7 +46,9 @@ public class Activity extends ActivityBase {
 
 	private ThemeInspire themeInspire;
 
-	private String license;
+	private String licence;
+
+	private String normative;
 
 	private String spatialExtension;
 
@@ -92,12 +94,20 @@ public class Activity extends ActivityBase {
 		this.themeInspire = themeInspire;
 	}
 
-	public String getLicense() {
-		return this.license;
+	public String getLicence() {
+		return this.licence;
 	}
 
-	public void setLicense(String license) {
-		this.license = license;
+	public void setLicence(String licence) {
+		this.licence = licence;
+	}
+
+	public String getNormative() {
+		return this.normative;
+	}
+
+	public void setNormative(String normative) {
+		this.normative = normative;
 	}
 
 	public String getSpatialExtension() {

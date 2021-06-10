@@ -125,7 +125,8 @@ public class CompleteDTOUtils {
 		activityDTO.setParent(completeProjectDTO());
 		activityDTO.setGrandparent(completeProgramDTO());
 		activityDTO.setThemeInspire(themeInspire);
-		activityDTO.setLicense("license");
+		activityDTO.setLicence("licence");
+		activityDTO.setNormative("normative");
 		activityDTO.setSpatialExtension("spatialExtension");
 		activityDTO.setStarred(false);
 		activityDTO.setResources(new ArrayList<>());
