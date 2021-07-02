@@ -9,9 +9,9 @@ package es.redmic.models.es.common.model;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -30,11 +30,11 @@ import es.redmic.models.es.geojson.common.model.Aggregations;
 public class SearchWrapper {
 
 	private Long took;
-	
+
 	private Boolean timed_out;
-	
-	private Map<String, Long> _shards;
-	
+
+	private Map<String, Object> _shards;
+
 	private Aggregations aggregations;
 
 	public Long getTook() {
@@ -53,14 +53,14 @@ public class SearchWrapper {
 		this.timed_out = timed_out;
 	}
 
-	public Map<String, Long> get_shards() {
+	public Map<String, Object> get_shards() {
 		return _shards;
 	}
 
-	public void set_shards(Map<String, Long> _shards) {
+	public void set_shards(Map<String, Object> _shards) {
 		this._shards = _shards;
 	}
-	
+
 	public Aggregations getAggregations() {
 		return aggregations;
 	}
