@@ -1,4 +1,6 @@
-package es.redmic.models.es.series.common.model;
+package es.redmic.models.es.maintenance.administrative.dto;
+
+import javax.validation.constraints.Size;
 
 /*-
  * #%L
@@ -20,21 +22,22 @@ package es.redmic.models.es.series.common.model;
  * #L%
  */
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import es.redmic.models.es.common.dto.DomainImplDTO;
 
-import es.redmic.models.es.common.model.BaseES;
-import es.redmic.models.es.common.model.HitWrapper;
+public class ResourceTypeDTO extends DomainImplDTO {
 
-@JsonIgnoreProperties(ignoreUnknown=true)
-public class SeriesHitWrapper<TModel extends BaseES<?>> extends HitWrapper {
+	@Size(min = 0, max = 1500)
+	private String description;
 
-	private TModel _source;
-
-	public TModel get_source() {
-		return _source;
+	public ResourceTypeDTO() {
+		super();
 	}
 
-	public void set_source(TModel _source) {
-		this._source = _source;
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }

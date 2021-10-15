@@ -1,10 +1,10 @@
-package es.redmic.models.es.maintenance.toponym.dto;
+package es.redmic.models.es.maintenance.administrative.dto;
 
 /*-
  * #%L
  * Models
  * %%
- * Copyright (C) 2019 REDMIC Project / Server
+ * Copyright (C) 2019 - 2021 REDMIC Project / Server
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,20 @@ package es.redmic.models.es.maintenance.toponym.dto;
  * #L%
  */
 
+import javax.validation.constraints.Size;
+
 import es.redmic.models.es.common.dto.DomainImplDTO;
 
-public class ToponymTypeDTO extends DomainImplDTO {
+public class ThemeInspireDTO extends DomainImplDTO {
 
-	public ToponymTypeDTO() {
-		super();
+	@Size(min=1, max=50)
+	private String code;
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 }

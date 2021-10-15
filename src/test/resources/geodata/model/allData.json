@@ -1,7 +1,6 @@
 {
 	"id": 14,
 	"uuid": "sdsd323sdds_3ed",
-	"_parent": "a.1.2.3",
 	"type": "Feature",
 	"geometry": {
 		"type": "Point",
@@ -11,6 +10,7 @@
 		]
 	},
 	"properties": {
+		"activityId": "a.1.2.3",
 		"geodataRelations": [
 			"tr-124", "si-124", "ln-124"
 		],

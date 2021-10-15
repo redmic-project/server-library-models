@@ -34,7 +34,6 @@ import es.redmic.models.es.geojson.geofixedstation.dto.GeoFixedObjectCollectingS
 import es.redmic.models.es.geojson.geofixedstation.dto.GeoFixedTimeSeriesDTO;
 import es.redmic.models.es.geojson.infrastructure.dto.InfrastructureDTO;
 import es.redmic.models.es.geojson.isolines.dto.IsolinesDTO;
-import es.redmic.models.es.geojson.toponym.dto.ToponymDTO;
 import es.redmic.models.es.geojson.tracking.animal.dto.AnimalTrackingDTO;
 import es.redmic.models.es.geojson.tracking.common.ElementTrackingDTO;
 import es.redmic.models.es.geojson.tracking.platform.dto.PlatformTrackingDTO;
@@ -54,7 +53,6 @@ public final class DataPrefixType {
 			INFRASTRUCTURE = "if",
 			ISOLINES = "il",
 			AREA = "ar",
-			TOPONYM = "tp",
 			TIMESERIES = "ts",
 			COLLECTINGSERIES = "cs",
 			ACTIVITY = "ac",
@@ -108,7 +106,6 @@ public final class DataPrefixType {
 				add(46L);
 			}
 		}));
-		classesHash.put(ToponymDTO.class, new Type(TOPONYM));
 		//classesHash.put(TimeSeriesDTO.class, new Type(TIMESERIES));
 		classesHash.put(ObjectCollectingSeriesDTO.class, new Type(COLLECTINGSERIES));
 		classesHash.put(ActivityDTO.class, new Type(ACTIVITY));

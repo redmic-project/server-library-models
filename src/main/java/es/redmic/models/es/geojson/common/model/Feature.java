@@ -9,9 +9,9 @@ package es.redmic.models.es.geojson.common.model;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -25,8 +25,6 @@ import javax.validation.constraints.Size;
 
 import org.locationtech.jts.geom.Geometry;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import es.redmic.models.es.common.model.BaseAbstractES;
 import es.redmic.models.es.geojson.GeoJSONFeatureType;
 
@@ -35,9 +33,6 @@ public class Feature<TProperties extends Properties, TGeometry extends Geometry>
 	@NotNull
 	@Size(min = 1, max = 50)
 	private String uuid;
-
-	@JsonIgnore
-	private String _parentId;
 
 	protected GeoJSONFeatureType type;
 
@@ -55,16 +50,6 @@ public class Feature<TProperties extends Properties, TGeometry extends Geometry>
 
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
-	}
-
-	@JsonIgnore
-	public String get_parentId() {
-		return _parentId;
-	}
-
-	@JsonIgnore
-	public void set_parentId(String _parent) {
-		this._parentId = _parent;
 	}
 
 	public void setType(GeoJSONFeatureType type) {

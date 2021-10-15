@@ -25,6 +25,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.redmic.models.es.maintenance.administrative.model.ActivityType;
+import es.redmic.models.es.maintenance.administrative.model.ThemeInspire;
 
 
 
@@ -42,6 +43,20 @@ public class Activity extends ActivityBase {
 	private String activityCategory;
 
 	private List<ActivityResource> resources;
+
+	private ThemeInspire themeInspire;
+
+	private String licence;
+
+	private String normative;
+
+	private String spatialExtension;
+
+	private Boolean starred;
+
+	private ActivityCompact parent;
+
+	private ActivityCompact grandparent;
 
 	public Activity() {
 		super();
@@ -69,5 +84,61 @@ public class Activity extends ActivityBase {
 
 	public void setResources(List<ActivityResource> resources) {
 		this.resources = resources;
+	}
+
+	public ThemeInspire getThemeInspire() {
+		return this.themeInspire;
+	}
+
+	public void setThemeInspire(ThemeInspire themeInspire) {
+		this.themeInspire = themeInspire;
+	}
+
+	public String getLicence() {
+		return this.licence;
+	}
+
+	public void setLicence(String licence) {
+		this.licence = licence;
+	}
+
+	public String getNormative() {
+		return this.normative;
+	}
+
+	public void setNormative(String normative) {
+		this.normative = normative;
+	}
+
+	public String getSpatialExtension() {
+		return this.spatialExtension;
+	}
+
+	public void setSpatialExtension(String spatialExtension) {
+		this.spatialExtension = spatialExtension;
+	}
+
+	public Boolean getStarred() {
+		return this.starred;
+	}
+
+	public void setStarred(Boolean starred) {
+		this.starred = starred;
+	}
+
+	public ActivityCompact getParent() {
+		return this.parent;
+	}
+
+	public void setParent(ActivityCompact parent) {
+		this.parent = parent;
+	}
+
+	public ActivityCompact getGrandparent() {
+		return this.grandparent;
+	}
+
+	public void setGrandparent(ActivityCompact grandparent) {
+		this.grandparent = grandparent;
 	}
 }
