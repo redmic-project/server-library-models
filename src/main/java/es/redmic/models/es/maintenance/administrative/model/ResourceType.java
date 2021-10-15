@@ -1,4 +1,4 @@
-package es.redmic.models.es.series.common.model;
+package es.redmic.models.es.maintenance.administrative.model;
 
 /*-
  * #%L
@@ -20,21 +20,21 @@ package es.redmic.models.es.series.common.model;
  * #L%
  */
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import es.redmic.models.es.common.model.DomainES;
 
-import es.redmic.models.es.common.model.BaseES;
-import es.redmic.models.es.common.model.HitWrapper;
+public class ResourceType extends DomainES {
 
-@JsonIgnoreProperties(ignoreUnknown=true)
-public class SeriesHitWrapper<TModel extends BaseES<?>> extends HitWrapper {
+	private String description;
 
-	private TModel _source;
-
-	public TModel get_source() {
-		return _source;
+	public ResourceType() {
+		super();
 	}
 
-	public void set_source(TModel _source) {
-		this._source = _source;
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }

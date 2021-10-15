@@ -9,9 +9,9 @@ package es.redmic.models.es.common.model;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -35,19 +35,19 @@ import org.locationtech.jts.geom.Polygon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.bedatadriven.jackson.datatype.jts.JtsModule;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import es.redmic.exception.common.ExceptionType;
 import es.redmic.exception.common.InternalException;
 import es.redmic.exception.elasticsearch.ESUpdateException;
-import es.redmic.jts4jackson.module.JTSModule;
 import es.redmic.models.es.geojson.common.model.Properties;
 
 @SuppressWarnings("rawtypes")
 public class ReferencesES<TModel extends BaseES> {
 
-	protected ObjectMapper objectMapper = new ObjectMapper().registerModule(new JTSModule())
+	protected ObjectMapper objectMapper = new ObjectMapper().registerModule(new JtsModule())
 			.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
 	private final Logger LOGGER = LoggerFactory.getLogger(ReferencesES.class);
@@ -88,7 +88,7 @@ public class ReferencesES<TModel extends BaseES> {
 
 	/**
 	 * Función para obtener los campos que cambiaron entre modelos.
-	 * 
+	 *
 	 */
 
 	private void calculateDifferences() {
@@ -99,7 +99,7 @@ public class ReferencesES<TModel extends BaseES> {
 	/**
 	 * Función para comparar los campos que cambiaron entre modelos. Los campos
 	 * cambiados se almacenan en "differences"
-	 * 
+	 *
 	 * @param oldModel
 	 *            modelo de la referencia antes de ser modificada.
 	 * @param newModel
@@ -188,7 +188,7 @@ public class ReferencesES<TModel extends BaseES> {
 	/**
 	 * Función para obtener los campos de la clase con la que se va a mapear. Los
 	 * campos obtenidos se almacenan en "fieldsInReference"
-	 * 
+	 *
 	 * @param resultClass
 	 *            clase de donde se deben obtener los campos.
 	 * @param path
@@ -235,7 +235,7 @@ public class ReferencesES<TModel extends BaseES> {
 	/**
 	 * Función que indica si la referencia debe ser actualizada. Depende de si
 	 * alguno de los campos de la clase han sido modificados.
-	 * 
+	 *
 	 * @return true si debe ser actualizada, false en caso contrario.
 	 */
 	public Boolean needUpdate() {

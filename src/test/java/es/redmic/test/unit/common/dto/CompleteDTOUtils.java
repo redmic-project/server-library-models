@@ -9,9 +9,9 @@ package es.redmic.test.unit.common.dto;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -50,6 +50,7 @@ import es.redmic.models.es.maintenance.administrative.dto.OrganisationTypeDTO;
 import es.redmic.models.es.maintenance.administrative.dto.PlatformTypeDTO;
 import es.redmic.models.es.maintenance.administrative.dto.ProjectGroupDTO;
 import es.redmic.models.es.maintenance.administrative.dto.RoleDTO;
+import es.redmic.models.es.maintenance.administrative.dto.ThemeInspireDTO;
 import es.redmic.models.es.maintenance.areas.dto.AreaClassificationDTO;
 import es.redmic.models.es.maintenance.areas.dto.ThematicTypeBaseDTO;
 import es.redmic.models.es.maintenance.areas.dto.ThematicTypeDTO;
@@ -114,12 +115,21 @@ public class CompleteDTOUtils {
 
 		ActivityFieldDTO activityFieldDTO = new ActivityFieldDTO();
 
+		ThemeInspireDTO themeInspire = new ThemeInspireDTO();
+
 		activityFieldDTO.setName("name");
 		activityFieldDTO.setName_en("name");
 		activityTypeDTO.setActivityField(activityFieldDTO);
 		activityDTO.setActivityType(activityTypeDTO);
 		activityDTO.setStartDate(new DateTime("2015-03-17T00:00:00.000Z"));
 		activityDTO.setParent(completeProjectDTO());
+		activityDTO.setGrandparent(completeProgramDTO());
+		activityDTO.setThemeInspire(themeInspire);
+		activityDTO.setLicence("licence");
+		activityDTO.setNormative("normative");
+		activityDTO.setSpatialExtension("spatialExtension");
+		activityDTO.setStarred(false);
+		activityDTO.setResources(new ArrayList<>());
 
 		return activityDTO;
 	}

@@ -1,10 +1,10 @@
-package es.redmic.models.es.geojson.toponym.model;
+package es.redmic.models.es.maintenance.administrative.model;
 
 /*-
  * #%L
  * Models
  * %%
- * Copyright (C) 2019 REDMIC Project / Server
+ * Copyright (C) 2019 - 2021 REDMIC Project / Server
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,16 +20,17 @@ package es.redmic.models.es.geojson.toponym.model;
  * #L%
  */
 
+import es.redmic.models.es.common.model.DomainES;
 
-import org.locationtech.jts.geom.Point;
+public class ThemeInspire extends DomainES {
 
-import es.redmic.models.es.geojson.GeoJSONFeatureType;
-import es.redmic.models.es.geojson.common.model.Feature;
+	private String code;
 
-public class Toponym extends Feature<ToponymProperties, Point> {
+	public String getCode() {
+		return code;
+	}
 
-	public Toponym() {
-		super();
-		this.setType(GeoJSONFeatureType.FEATURE);
+	public void setCode(String code) {
+		this.code = code;
 	}
 }
