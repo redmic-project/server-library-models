@@ -179,6 +179,7 @@ public class CompleteDTOUtils {
 		DocumentDTO documentDTO = new DocumentDTO();
 
 		documentDTO.setTitle("title");
+		documentDTO.setCode("code");
 		documentDTO.setYear(2000);
 		documentDTO.setAuthor("author");
 		documentDTO.setSource("source");

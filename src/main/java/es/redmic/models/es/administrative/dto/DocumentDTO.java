@@ -45,7 +45,8 @@ import es.redmic.models.es.maintenance.administrative.dto.DocumentTypeDTO;
 
 public class DocumentDTO extends DocumentCompactDTO {
 
-	@Size(min = 0, max = 20)
+	@NotNull
+	@Size(min = 1, max = 20)
 	private String code;
 
 	@NotNull
