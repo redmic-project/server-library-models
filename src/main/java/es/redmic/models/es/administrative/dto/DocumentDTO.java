@@ -9,9 +9,9 @@ package es.redmic.models.es.administrative.dto;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -67,6 +67,15 @@ public class DocumentDTO extends DocumentCompactDTO {
 	@JsonDeserialize(using = CustomRelationDeserializer.class)
 	@JsonSchemaUrl(value = "controller.mapping.DOCUMENT_TYPE")
 	private DocumentTypeDTO documentType;
+
+	@Size(min = 0, max = 250)
+	private String internalUrl;
+
+	@NotNull
+	private Boolean privateInternalUrl = false;
+
+	@NotNull
+	private Boolean enabled;
 
 	@JsonSchemaIgnore
 	@JsonSerialize(using = CustomDateTimeSerializer.class)
@@ -146,6 +155,30 @@ public class DocumentDTO extends DocumentCompactDTO {
 
 	public void setDocumentType(DocumentTypeDTO documentType) {
 		this.documentType = documentType;
+	}
+
+	public void setInternalUrl(String internalUrl) {
+		this.internalUrl = internalUrl;
+	}
+
+	public Boolean getPrivateInternalUrl() {
+		return this.privateInternalUrl;
+	}
+
+	public void setPrivateInternalUrl(Boolean privateInternalUrl) {
+		this.privateInternalUrl = privateInternalUrl;
+	}
+
+	public String getInternalUrl() {
+		return this.internalUrl;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public Boolean getEnabled() {
+		return this.enabled;
 	}
 
 	public DateTime getUpdated() {

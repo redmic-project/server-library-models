@@ -183,6 +183,8 @@ public class CompleteDTOUtils {
 		documentDTO.setAuthor("author");
 		documentDTO.setSource("source");
 		documentDTO.setLanguage("es");
+		documentDTO.setEnabled(true);
+		documentDTO.setPrivateInternalUrl(true);
 
 		DocumentTypeDTO documentTypeDTO = new DocumentTypeDTO();
 		documentTypeDTO.setName("name");
