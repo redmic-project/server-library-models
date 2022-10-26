@@ -110,6 +110,10 @@ public class Document extends DocumentCompact {
 		this.remark = remark;
 	}
 
+	public String getInternalUrl() {
+		return this.internalUrl;
+	}
+
 	public void setInternalUrl(String internalUrl) {
 		this.internalUrl = internalUrl;
 	}
@@ -122,16 +126,12 @@ public class Document extends DocumentCompact {
 		this.privateInternalUrl = privateInternalUrl;
 	}
 
-	public String getInternalUrl() {
-		return this.internalUrl;
+	public Boolean getEnabled() {
+		return this.enabled;
 	}
 
 	public void setEnabled(Boolean enabled) {
 		this.enabled = enabled;
-	}
-
-	public Boolean getEnabled() {
-		return this.enabled;
 	}
 
 	public DateTime getUpdated() {

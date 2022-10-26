@@ -33,6 +33,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.kjetland.jackson.jsonSchema.annotations.JsonSchemaDefault;
 import com.kjetland.jackson.jsonSchema.annotations.JsonSchemaIgnore;
 import com.kjetland.jackson.jsonSchema.annotations.JsonSchemaUrl;
 
@@ -72,9 +73,11 @@ public class DocumentDTO extends DocumentCompactDTO {
 	private String internalUrl;
 
 	@NotNull
+	@JsonSchemaDefault(value = "false")
 	private Boolean privateInternalUrl = false;
 
 	@NotNull
+	@JsonSchemaDefault(value = "true")
 	private Boolean enabled;
 
 	@JsonSchemaIgnore
@@ -157,6 +160,10 @@ public class DocumentDTO extends DocumentCompactDTO {
 		this.documentType = documentType;
 	}
 
+	public String getInternalUrl() {
+		return this.internalUrl;
+	}
+
 	public void setInternalUrl(String internalUrl) {
 		this.internalUrl = internalUrl;
 	}
@@ -167,10 +174,6 @@ public class DocumentDTO extends DocumentCompactDTO {
 
 	public void setPrivateInternalUrl(Boolean privateInternalUrl) {
 		this.privateInternalUrl = privateInternalUrl;
-	}
-
-	public String getInternalUrl() {
-		return this.internalUrl;
 	}
 
 	public void setEnabled(Boolean enabled) {
