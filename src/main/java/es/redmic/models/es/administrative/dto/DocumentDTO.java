@@ -29,6 +29,7 @@ import javax.validation.constraints.Size;
 import org.joda.time.DateTime;
 import org.springframework.util.StringUtils;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -43,6 +44,7 @@ import es.redmic.models.es.common.deserializer.CustomRelationDeserializer;
 import es.redmic.models.es.common.serializer.CustomDateTimeSerializer;
 import es.redmic.models.es.maintenance.administrative.dto.DocumentTypeDTO;
 
+@JsonFilter("InternalDocumentFilter")
 public class DocumentDTO extends DocumentCompactDTO {
 
 	@NotNull
