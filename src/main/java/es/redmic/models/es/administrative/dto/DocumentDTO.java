@@ -9,9 +9,9 @@ package es.redmic.models.es.administrative.dto;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -29,10 +29,12 @@ import javax.validation.constraints.Size;
 import org.joda.time.DateTime;
 import org.springframework.util.StringUtils;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.kjetland.jackson.jsonSchema.annotations.JsonSchemaDefault;
 import com.kjetland.jackson.jsonSchema.annotations.JsonSchemaIgnore;
 import com.kjetland.jackson.jsonSchema.annotations.JsonSchemaUrl;
 
@@ -42,9 +44,11 @@ import es.redmic.models.es.common.deserializer.CustomRelationDeserializer;
 import es.redmic.models.es.common.serializer.CustomDateTimeSerializer;
 import es.redmic.models.es.maintenance.administrative.dto.DocumentTypeDTO;
 
+@JsonFilter("InternalDocumentFilter")
 public class DocumentDTO extends DocumentCompactDTO {
 
-	@Size(min = 0, max = 20)
+	@NotNull
+	@Size(min = 1, max = 20)
 	private String code;
 
 	@NotNull
@@ -67,6 +71,17 @@ public class DocumentDTO extends DocumentCompactDTO {
 	@JsonDeserialize(using = CustomRelationDeserializer.class)
 	@JsonSchemaUrl(value = "controller.mapping.DOCUMENT_TYPE")
 	private DocumentTypeDTO documentType;
+
+	@Size(min = 0, max = 250)
+	private String internalUrl;
+
+	@NotNull
+	@JsonSchemaDefault(value = "false")
+	private Boolean privateInternalUrl = false;
+
+	@NotNull
+	@JsonSchemaDefault(value = "true")
+	private Boolean enabled;
 
 	@JsonSchemaIgnore
 	@JsonSerialize(using = CustomDateTimeSerializer.class)
@@ -146,6 +161,30 @@ public class DocumentDTO extends DocumentCompactDTO {
 
 	public void setDocumentType(DocumentTypeDTO documentType) {
 		this.documentType = documentType;
+	}
+
+	public String getInternalUrl() {
+		return this.internalUrl;
+	}
+
+	public void setInternalUrl(String internalUrl) {
+		this.internalUrl = internalUrl;
+	}
+
+	public Boolean getPrivateInternalUrl() {
+		return this.privateInternalUrl;
+	}
+
+	public void setPrivateInternalUrl(Boolean privateInternalUrl) {
+		this.privateInternalUrl = privateInternalUrl;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public Boolean getEnabled() {
+		return this.enabled;
 	}
 
 	public DateTime getUpdated() {
