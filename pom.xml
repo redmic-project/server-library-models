@@ -14,7 +14,7 @@
 	<groupId>es.redmic.lib</groupId>
 	<artifactId>models</artifactId>
 	<packaging>jar</packaging>
-	<version>0.13.0-feature-addInternalUrl</version>
+	<version>0.14.0</version>
 	<name>Models</name>
 	<description>Input-output classes and models</description>
 
