@@ -59,6 +59,7 @@ public final class DataPrefixType {
 			PROJECT = "pj",
 			PROGRAM = "pg",
 			LAYERS = "ly",
+			SIGHTING = "si",
 			OTHER = "ot";
 
 	// @formatter:on
