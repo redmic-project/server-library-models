@@ -63,6 +63,9 @@ public class ActivityDTO extends ActivityBaseDTO {
 	@JsonSchemaUniqueItemsByRequiredProperties
 	private List<ActivityResourceDTO> resources;
 
+	@JsonSchemaUniqueItemsByRequiredProperties
+	private List<ActivityEmbeddedContentDTO> embeddedContents;
+
 	@JsonIgnoreProperties(value = { "_meta" })
 	@JsonDeserialize(using = CustomRelationDeserializer.class)
 	@JsonSchemaUrl(value = "controller.mapping.THEME_INSPIRE")
@@ -121,6 +124,14 @@ public class ActivityDTO extends ActivityBaseDTO {
 
 	public void setResources(List<ActivityResourceDTO> resources) {
 		this.resources = resources;
+	}
+
+	public List<ActivityEmbeddedContentDTO> getEmbeddedContents() {
+		return this.embeddedContents;
+	}
+
+	public void setEmbeddedContents(List<ActivityEmbeddedContentDTO> embeddedContents) {
+		this.embeddedContents = embeddedContents;
 	}
 
 	public ThemeInspireDTO getThemeInspire() {

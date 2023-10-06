@@ -44,6 +44,8 @@ public class Activity extends ActivityBase {
 
 	private List<ActivityResource> resources;
 
+	private List<ActivityEmbeddedContent> embeddedContents;
+
 	private ThemeInspire themeInspire;
 
 	private String licence;
@@ -84,6 +86,14 @@ public class Activity extends ActivityBase {
 
 	public void setResources(List<ActivityResource> resources) {
 		this.resources = resources;
+	}
+
+	public List<ActivityEmbeddedContent> getEmbeddedContents() {
+		return this.embeddedContents;
+	}
+
+	public void setEmbeddedContents(List<ActivityEmbeddedContent> embeddedContents) {
+		this.embeddedContents = embeddedContents;
 	}
 
 	public ThemeInspire getThemeInspire() {
