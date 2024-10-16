@@ -5,11 +5,7 @@ include:
   - project: 'redmic-project/gitlab-ci-templates'
     ref: master
     file: '/scanning/dependency-scanning.yml'
-  - template: Security/SAST.gitlab-ci.yml
 
 stages:
   - build
   - test
-
-sast:
-  stage: test
