@@ -1,11 +1,21 @@
+# You can override the included template(s) by including variable overrides
+# SAST customization: https://docs.gitlab.com/ee/user/application_security/sast/#customizing-the-sast-settings
+# Secret Detection customization: https://docs.gitlab.com/ee/user/application_security/secret_detection/pipeline/#customization
+# Dependency Scanning customization: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#customizing-the-dependency-scanning-settings
+# Container Scanning customization: https://docs.gitlab.com/ee/user/application_security/container_scanning/#customizing-the-container-scanning-settings
+# Note that environment variables can be set in several places
+# See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
 include:
-  - project: 'redmic-project/gitlab-ci-templates'
-    ref: master
-    file: '/maven-building-library.yml'
-  - project: 'redmic-project/gitlab-ci-templates'
-    ref: master
-    file: '/license-listing.yml'
-
+- project: redmic-project/gitlab-ci-templates
+  ref: master
+  file: "/maven-building-library.yml"
+- project: redmic-project/gitlab-ci-templates
+  ref: master
+  file: "/license-listing.yml"
+- template: Security/SAST.gitlab-ci.yml
 stages:
-  - build
-  - license-list
+- build
+- license-list
+- test
+sast:
+  stage: test
