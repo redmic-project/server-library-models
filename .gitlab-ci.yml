@@ -9,3 +9,6 @@ include:
 stages:
   - build
   - test
+
+sast:
+  stage: test
