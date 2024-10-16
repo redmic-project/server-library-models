@@ -8,6 +8,4 @@ include:
 
 stages:
   - build
-
-dependency_scanning:
-  stage: build
+  - test
