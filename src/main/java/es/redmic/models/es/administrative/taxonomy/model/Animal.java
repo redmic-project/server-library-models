@@ -9,9 +9,9 @@ package es.redmic.models.es.administrative.taxonomy.model;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -38,23 +38,25 @@ public class Animal extends AnimalCompact {
 	private String description;
 	private DomainES sex;
 	private DomainES lifeStage;
-	
+
 	@JsonSerialize(using = CustomDateTimeSerializer.class)
 	@JsonDeserialize(using = CustomDateTimeDeserializer.class)
 	private DateTime inserted;
-	
+
 	@JsonSerialize(using = CustomDateTimeSerializer.class)
 	@JsonDeserialize(using = CustomDateTimeDeserializer.class)
 	private DateTime updated;
-	
+
 	private DateTime releaseDate;
 	private String releaseLocality;
 
 	@JsonSchemaUniqueItemsByRequiredProperties
 	private List<Recovery> recoveries;
-	
+
 	@JsonSchemaUniqueItemsByRequiredProperties
 	private List<SpecimenTag> specimenTags;
+
+	private Taxonomy taxonomy;
 
 	public Animal() {
 		super();
@@ -140,5 +142,13 @@ public class Animal extends AnimalCompact {
 
 	public void setSpecimenTags(List<SpecimenTag> specimenTags) {
 		this.specimenTags = specimenTags;
+	}
+
+	public Taxonomy getTaxonomy() {
+		return taxonomy;
+	}
+
+	public void setTaxonomy(Taxonomy taxonomy) {
+		this.taxonomy = taxonomy;
 	}
 }
